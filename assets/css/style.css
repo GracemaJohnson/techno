@@ -270,7 +270,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: transparent;
+  background-color:  black;
   padding-block: 18px;
   z-index: 4;
 }
@@ -323,7 +323,7 @@ body {
   display: flex;
   flex-direction: column;
   z-index: 1;
-  visibility: hidden;
+  visibility: visible;
   transition: 0.25s var(--cubic-in);
 }
 
@@ -1195,11 +1195,11 @@ body {
    */
 
   .hero {
-    background-image: url("../images/hero.jpg");
+    background-image: url("../images/hand1.avif");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left;
-    min-height: 780px;
+    min-height: 780px; 
   }
 
 
