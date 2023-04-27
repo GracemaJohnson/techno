@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HOPE-Donation</title>
+    <title>HOPE-LOGIN</title>
 
     <!-- 
     - favicon
@@ -16,7 +16,8 @@
   - custom css link
 -->
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/contact.css">
+
+    <link rel="stylesheet" href="join.css">
 
     <!-- 
   - google font link
@@ -31,7 +32,6 @@
     <!-- 
     - #HEADER
   -->
-
     <header class="header" data-header>
         <div class="container">
 
@@ -41,14 +41,14 @@
 
 
             <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
-            <ion-icon name="menu-outline"></ion-icon>
-            </button>
+        <ion-icon name="menu-outline"></ion-icon>
+        </button>
 
             <nav class="navbar" data-navbar>
 
                 <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
-                 <ion-icon name="close-outline"></ion-icon>
-               </button>
+             <ion-icon name="close-outline"></ion-icon>
+           </button>
 
                 <a href="#" class="logo">HOPE</a>
 
@@ -107,52 +107,22 @@
             </nav>
         </div>
     </header>
-    <section class="testi">
 
-        <div class="testi-content">
+    <div class="form-container">
+        <h5 style="font-size: 50px;color:hsl(86, 45%, 54%);">JOIN</h5>
 
-            <p class="section-subtitle">
-                <img src="./assets/images/subtitle-img-green.png" width="32" height="7" alt="Wavy line">
+        <section class="section_form">
+            <form id="consultation-form" class="feed-form" action="#">
+                <input required="" placeholder="Organization Name" type="text">
+                <input name="phone" required="" placeholder="Phone number">
+                <input name="email" required="" placeholder="E-mail" type="email">
+                <input name="fund" required="" placeholder="Fund " type="amount">
+                <input name="logo" required="" placeholder="logo" type="logo">
+                <button class="button_submit">POST</button>
+            </form>
+        </section>
 
-
-            </p>
-
-            <h2 class="h2 section-title">
-                <strong>World Food Program</strong>
-            </h2>
-
-            <div class="testi-card">
-
-
-
-                <div>
-                    <blockquote class="testi-text">
-                        The United Nations World Food Programme (WFP) Innovation Accelerator sources, supports, and scales high-impact innovations to achieve Zero Hunger. Donate Now & Help To Save Lives By Providing Hungry Children & Families Nutritious Meals. The UN World Food
-                        Programme, The Leading Humanitarian Organisation Fighting Hunger. Services: Food Assistance, Capacity Strengthening, Operations Database
-                    </blockquote>
-
-                    <li>
-                        <a href="./donation.html" class="navbar-link" data-nav-link>
-                            <button class="btn btn-primary">Donate to WFP</button>
-
-                            <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
-                        </a>
-                    </li>
-                </div>
-
-            </div>
-
-        </div>
-
-        <figure class="testi-banner">
-            <img src="./assets/images/wfp1.jpeg" style="object-fit: contain" align-item="right" loading="lazy" alt="Rhinoceros" class="img-cover">
-        </figure>
-
-    </section>
-
-
-
-
+    </div>
 
 </body>
 
