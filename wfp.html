@@ -16,6 +16,7 @@
   - custom css link
 -->
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/contact.css">
 
     <!-- 
   - google font link
@@ -40,21 +41,21 @@
 
 
             <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
-    <ion-icon name="menu-outline"></ion-icon>
-  </button>
+            <ion-icon name="menu-outline"></ion-icon>
+            </button>
 
             <nav class="navbar" data-navbar>
 
                 <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
-      <ion-icon name="close-outline"></ion-icon>
-    </button>
+                 <ion-icon name="close-outline"></ion-icon>
+               </button>
 
                 <a href="#" class="logo">HOPE</a>
 
                 <ul class="navbar-list">
 
                     <li>
-                        <a href="./index.html" class="navbar-link" data-nav-link>
+                        <a href="index.html" class="navbar-link" data-nav-link>
                             <span>Home</span>
 
                             <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
@@ -62,7 +63,7 @@
                     </li>
 
                     <li>
-                        <a href="./index.html#about" class="navbar-link" data-nav-link>
+                        <a href="./index.html/#about" class="navbar-link" data-nav-link>
                             <span>About</span>
 
                             <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
@@ -70,7 +71,7 @@
                     </li>
 
                     <li>
-                        <a href="./index.html#service" class="navbar-link" data-nav-link>
+                        <a href="./index.html/#service" class="navbar-link" data-nav-link>
                             <span>Service</span>
 
                             <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
@@ -78,7 +79,7 @@
                     </li>
 
                     <li>
-                        <a href="./index.html#donate" class="navbar-link" data-nav-link>
+                        <a href="./index.html/#donate" class="navbar-link" data-nav-link>
                             <span>Donate</span>
 
                             <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
@@ -86,7 +87,7 @@
                     </li>
 
                     <li>
-                        <a href="./index.html#event" class="navbar-link" data-nav-link>
+                        <a href="./index.html/#event" class="navbar-link" data-nav-link>
                             <span>Event</span>
 
                             <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
@@ -106,30 +107,50 @@
             </nav>
         </div>
     </header>
-    <script src="./assets/js/jquery.js"></script>
-    <script src="./assets/js/jquery.qrcode.min.js"></script>
-    <script src="./assets/js/donate.js"></script>
+    <section class="testi">
 
-    <body onload="donate()">
-        <center>
-            <div id="donatemessage"></div>
-            <div id="donation">
-                <input type="text" name="donatebox" id="donatebox" onchange="donate()">
-                <br><br><img style="cursor:pointer" id="donationbutton" height="30px" onclick="donate()" src="">
+        <div class="testi-content">
+
+            <p class="section-subtitle">
+                <img src="./assets/images/subtitle-img-green.png" width="32" height="7" alt="Wavy line">
+
+                <span>Our Testimonials</span>
+            </p>
+
+            <h2 class="h2 section-title">
+                What People Say About <strong>Our Organization</strong>
+            </h2>
+
+            <div class="testi-card">
+
+                <figure class="card-avatar">
+                    <img src="./assets/images/testi-avatar.png" width="60" height="60" loading="lazy" alt="David S. Neuman">
+                </figure>
+
+                <div>
+                    <blockquote class="testi-text">
+                        Donate Now & Help To Save Lives By Providing Hungry Children & Families Nutritious Meals. The UN World Food Programme, The Leading Humanitarian Organisation Fighting Hunger. Services: Food Assistance, Capacity Strengthening, Operations Database
+                    </blockquote>
+
+                    <h3 class="testi-name">David S. Neuman</h3>
+
+                    <p class="testi-title">Business Manager</p>
+                </div>
+
             </div>
-            <div id="donatetext"></div>
-            <br>
-            <div id="qrcodePlaceHolder"></div>
-        </center>
 
-        <script>
-            document.getElementById("donatemessage").innerHTML = "<h1>Donate Bitcoin to " + organization + "</h1>";
+        </div>
 
-            if (!isNaN(parseFloat(params.amount))) {
-                document.getElementById("donatebox").value = parseFloat(params.amount);
-            }
-        </script>
+        <figure class="testi-banner">
+            <img src="./assets/images/.jpg" width="960" height="846" loading="lazy" alt="Rhinoceros" class="img-cover">
+        </figure>
 
-    </body>
+    </section>
+
+
+
+
+
+</body>
 
 </html>
