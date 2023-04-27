@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOPE-Donation</title>
+
+    <!-- 
+    - favicon
+  -->
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+    <!-- 
+  - custom css link
+-->
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!-- 
+  - google font link
+-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@300;400;500;700&family=Oswald:wght@600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- 
+    - #HEADER
+  -->
+
+    <header class="header" data-header>
+        <div class="container">
+
+            <h1>
+                <a href="#" class="logo">HOPE</a>
+            </h1>
+
+
+            <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
+    <ion-icon name="menu-outline"></ion-icon>
+  </button>
+
+            <nav class="navbar" data-navbar>
+
+                <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
+      <ion-icon name="close-outline"></ion-icon>
+    </button>
+
+                <a href="#" class="logo">HOPE</a>
+
+                <ul class="navbar-list">
+
+                    <li>
+                        <a href="./index.html" class="navbar-link" data-nav-link>
+                            <span>Home</span>
+
+                            <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="./index.html#about" class="navbar-link" data-nav-link>
+                            <span>About</span>
+
+                            <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="./index.html#service" class="navbar-link" data-nav-link>
+                            <span>Service</span>
+
+                            <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="./index.html#donate" class="navbar-link" data-nav-link>
+                            <span>Donate</span>
+
+                            <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="./index.html#event" class="navbar-link" data-nav-link>
+                            <span>Event</span>
+
+                            <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html" class="navbar-link" data-nav-link>
+                            <span>Contact</span>
+
+                            <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+        </div>
+    </header>
+    <script src="./assets/js/jquery.js"></script>
+    <script src="./assets/js/jquery.qrcode.min.js"></script>
+    <script src="./assets/js/donate.js"></script>
+
+    <body onload="donate()">
+        <center>
+            <div id="donatemessage"></div>
+            <div id="donation">
+                <input type="text" name="donatebox" id="donatebox" onchange="donate()">
+                <br><br><img style="cursor:pointer" id="donationbutton" height="30px" onclick="donate()" src="">
+            </div>
+            <div id="donatetext"></div>
+            <br>
+            <div id="qrcodePlaceHolder"></div>
+        </center>
+
+        <script>
+            document.getElementById("donatemessage").innerHTML = "<h1>Donate Bitcoin to " + organization + "</h1>";
+
+            if (!isNaN(parseFloat(params.amount))) {
+                document.getElementById("donatebox").value = parseFloat(params.amount);
+            }
+        </script>
+
+    </body>
+
+</html>
