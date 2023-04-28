@@ -19,13 +19,13 @@
 .feed-form input {
     height: 54px;
     border-radius: 5px;
-    background: grey;
+    /* background: grey; */
     margin-bottom: 15px;
     border: none;
     padding: 0 20px;
     font-weight: 300;
     font-size: 20px;
-    color: #fff
+    color: #000
 }
 
 .button_submit:hover,

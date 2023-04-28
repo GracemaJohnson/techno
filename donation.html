@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="style2.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+    
+  
+  </head>
+  <body>
+    <header class="header" data-header>
+      <div class="container">
+
+          <h1>
+              <a href="#" class="logo">HOPE</a>
+          </h1>
+
+
+
+          <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
+      <ion-icon name="menu-outline"></ion-icon>
+    </button>
+
+          <nav class="navbar" data-navbar>
+
+              <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+
+              <a href="#" class="logo">HOPE</a>
+
+              <ul class="navbar-list">
+
+                  <li>
+                      <a href="./index.html" class="navbar-link" data-nav-link>
+                          <span>Home</span>
+
+                          <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+                      </a>
+                  </li>
+
+                  <li>
+                      <a href="./index.html#about" class="navbar-link" data-nav-link>
+                          <span>About</span>
+
+                          <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+                      </a>
+                  </li>
+
+                  <li>
+                      <a href="./index.html#service" class="navbar-link" data-nav-link>
+                          <span>Service</span>
+
+                          <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+                      </a>
+                  </li>
+
+                  <li>
+                      <a href="./index.html#donate" class="navbar-link" data-nav-link>
+                          <span>Donate</span>
+
+                          <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+                      </a>
+                  </li>
+
+
+
+                  <li>
+                      <a href="./login.html" class="navbar-link" data-nav-link>
+                          <span>Login</span>
+
+                          <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+                      </a>
+                  </li>
+
+              </ul>
+
+          </nav>
+
+          <div class="header-action">
+
+              <button class="search-btn" aria-label="Search">
+      </button>
+
+              <!-- <button class="btn btn-primary">
+              <li>
+                  <a href="donation.html" class="navbar-link" data-nav-link>
+                      <button class="btn btn-primary">Donate</button>
+
+                      <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+                  </a>
+              </li> -->
+
+          </div>
+
+      </div>
+  </header>
+    
+    <button id="connect-button">Connect Metamask</button>
+    <button id="send-button">Donate</button>
+    
+   <!-- <a href="./tr-history.html"> <button id="transaction-history">History</button></a> -->
+   await ethereum.request({
+    method: 'eth_requestAccounts',
+  });
+    <script>
+      let account;
+
+      document.getElementById('connect-button').addEventListener('click', event => { 
+        let button = event.target;
+        ethereum.request({method: 'eth_requestAccounts'}).then(accounts => {
+
+          account = accounts[0];
+          console.log(account);
+          button.textContent = account;
+
+          ethereum.request({method: 'eth_getBalance' , params: [account, 'latest']}).then(result => {
+            console.log(result);
+            let wei = parseInt(result,16);
+            let balance = wei / (10**18);
+            console.log(balance + " ETH");
+          });
+        });
+      });
+      
+      <!-- document.getElementById('transaction-history').addEventListener('click', event =>{console.log("hellloooo")}); -->
+      document.getElementById('send-button').addEventListener('click', event =>{
+          console.log("hii")
+          let transactionParam = {
+            to: '0x02DC21b8bAAEa2eD23650cC0153DA62642f1f7cB',
+            from: '0x02DC21b8bAAEa2eD23650cC0153DA62642f1f7cB',
+            value: '0x38D7EA4C68000'
+          };
+          
+          ethereum.request({method: 'eth_sendTransaction', params:[transactionParam]}).then(txhash => {
+            console.log(txhash);
+            checkTransactionconfirmation(txhash).then(r => alert(r));
+          });
+        });
+      function checkTransactionconfirmation(txhash) {
+
+        let checkTransactionLoop = () => {
+          return ethereum.request({method:'eth_getTransactionReceipt',params:[txhash]}).then(r => {
+            if(r !=null) return 'confirmed';
+            else return checkTransactionLoop();
+          });
+        };
+
+        return checkTransactionLoop();
+      }
+      document.getElementById('connect-button').addEventListener('click', event =>{
+
+      const myTimeout = setTimeout(myGreeting, 2000);
+      function myGreeting() {
+       location.replace('https://sepolia.etherscan.io/address/0x7af999bcfa3aea994edf7ca4dd8ca62dc2b91f20')
+
+      }
+    });
+    </script>  
+  </body>
+</html>

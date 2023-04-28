@@ -107,17 +107,25 @@
 
         <section class="section_form">
             <form id="consultation-form" class="feed-form" action="#">
-                <input required="" placeholder="Organization Name" type="text">
+                <input required="" placeholder="Name" type="text">
                 <input name="phone" required="" placeholder="Phone number">
                 <input name="email" required="" placeholder="E-mail" type="email">
-                <input name="fund" required="" placeholder="Fund " type="amount">
-                <input name="logo" required="" placeholder="logo" type="logo">
-                <button class="button_submit">POST</button>
+                <button id="button_submit">POST</button>
             </form>
         </section>
 
     </div>
 
 </body>
-
+<script>
+    document.getElementById('button_submit').addEventListener('click', event =>{
+        
+        alert("Successfully Submitted!!!")
+        const myTimeout = setTimeout(myGreeting, 2000);
+        function myGreeting() {
+            location.replace('http://127.0.0.1:5500/')
+            
+        }
+    });
+</script>
 </html>
